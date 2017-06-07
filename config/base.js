@@ -12,25 +12,14 @@ var commonPath = {
   rootPath: rootPath,
   srcPath: srcPath,
   public: path.join(rootPath, 'public'),              // build 后输出目录
-  indexHTML: path.join(srcPath, './src/index.html'),        // 入口模板页面
+  indexHTML: path.join(srcPath, './index.html'),        // 入口模板页面
   staticDir: path.join(rootPath, 'static')        // 不需编译的静态资源
 };
 
 module.exports = {
     commonPath: commonPath,
     entry: {
-      app: path.join(srcPath, 'index.js'),
-      vendor: [
-        'history',
-        'react',
-        'react-dom',
-        'react-redux',
-        'react-router',
-        'react-router-redux',
-        'mobx',
-        'mobx-react',
-        'tinper-bee'
-      ]
+      app: path.join(srcPath, 'index.js')
     },
     output: {
       path: commonPath.public,

@@ -11,7 +11,7 @@
     "./node_modules/statuses/index.js": 8,
     "./node_modules/inherits/inherits_browser.js": 10,
     "./node_modules/body-parser/node_modules/debug/src/browser.js": 11,
-    "./node_modules/node-libs-browser/node_modules/process/browser.js": 12,
+    "./node_modules/process/browser.js": 12,
     "./node_modules/body-parser/node_modules/debug/src/debug.js": 13,
     "./node_modules/ms/index.js": 14,
     "./node_modules/body-parser/lib/read.js": 15,

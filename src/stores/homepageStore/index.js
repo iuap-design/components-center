@@ -8,6 +8,7 @@ class HomepageStore {
 
     constructor() {
         this.toggle = false;
+        this.expanded= false;
         this.breadcrumbItem = [{
             name: '首页'
         },{

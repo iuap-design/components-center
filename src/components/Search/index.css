@@ -1,0 +1,19 @@
+.search{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url("../../assets/img/search-bg.png");
+  color: #fff;
+}
+.search-input{
+  margin: 20px auto;
+  color:#000;
+}
+.search-input.u-input-group.simple .u-form-control{
+  width: 400px;
+  height: 40px;
+  line-height: 40px;
+}
+.search-input.u-input-group .u-input-group-btn{
+  line-height: 35px;
+}
+

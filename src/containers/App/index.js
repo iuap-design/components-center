@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {observer, inject} from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
-import { Con } from 'tinper-bee';
+import { Header } from '../../components';
 
 @inject('appStore') @observer
 class App extends Component {
@@ -12,12 +12,13 @@ class App extends Component {
 
     render() {
         return (
-            <Con fluid>
+            <div>
                 <DevTools />
+                <Header />
                 {
                     this.props.children
                 }
-            </Con>
+            </div>
         );
     }
 

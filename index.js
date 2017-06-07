@@ -1,5 +1,5 @@
 var express = require('express')
-var log4js = require('log4js')
+var log = require('./server/utils/logHelper');
 var router = require('./server/routes/index')
 var middleware = require('./server/utils/middleware')
 var bodyParser = require('body-parser')
@@ -10,15 +10,7 @@ var fallback = require('connect-history-api-fallback');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 
-log4js.configure({
- appenders: [
-   { type: 'console' },
-   { type: 'file', filename: './server/logs/cheese.log', category: 'cheese' }
-  ]
-});
 
-var logger = log4js.getLogger('cheese');
-logger.setLevel('INFO');
 
 var compiler = webpack(webpackConfig);
 
@@ -31,6 +23,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser());
+
+//启用日志
+log.use(app);
 
 // serve webpack bundle output
 app.use(webpackDevMiddleware(compiler, {
@@ -50,8 +45,6 @@ app.use(middleware.extendAPIOutput);
 //扩展错误处理
 app.use(middleware.apiErrorHandle);
 
-//使用日志
-app.use(log4js.connectLogger(logger, { level: 'auto', format: ':method :url :date' }));
 
 app.use('/',router);
 

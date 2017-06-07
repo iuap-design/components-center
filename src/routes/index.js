@@ -9,8 +9,8 @@ export default (
     <Provider { ...stores}>
         <Router history={ browserHistory }>
             <Route path="/" component={App} >
-                <IndexRoute component={Login} />
-                <Route path="/homepage" component={Homepage} />
+                <IndexRoute component={Homepage} />
+                <Route path="/login" component={Login} />
             </Route>
         </Router>
     </Provider>
