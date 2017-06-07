@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
-import { Navbar,FormControl, Badge, Icon, Con } from 'tinper-bee';
-import classnames from 'classnames';
+import React, {Component} from 'react';
+import {observer, inject} from 'mobx-react';
+import {Navbar, FormControl, Badge, Icon, Con} from 'tinper-bee';
+import {Link} from 'react-router';
 
 import './index.css';
 
@@ -14,9 +14,9 @@ const Nav = Navbar.Nav;
 @inject('homepageStore') @observer
 class Header extends Component {
 
-  render(){
-    const { changeExpand, expanded } = this.props.homepageStore;
-    return(
+  render() {
+    const {changeExpand, expanded} = this.props.homepageStore;
+    return (
       <div>
         <Navbar
           expanded={expanded}
@@ -33,18 +33,31 @@ class Header extends Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem key="1" href="#">
-                主页
+                <Link to="/homepage">
+                  主页
+                </Link>
               </NavItem>
               <NavItem key="2" href="#">
-                组件库
+                <Link to="/list">
+                  组件库
+                </Link>
+              </NavItem>
+              <NavItem key="3" href="#">
+                <Link to="/standard">
+                  规范
+                </Link>
               </NavItem>
             </Nav>
             <Nav pullRight>
-              <NavItem key="1" href="#">
-                注册
+              <NavItem key="4" href="#">
+                <Link to="/register">
+                  注册
+                </Link>
               </NavItem>
-              <NavItem key="2" href="#">
-                登陆
+              <NavItem key="5" href="#">
+                <Link to="/login">
+                  登陆
+                </Link>
               </NavItem>
             </Nav>
           </Navbar.Collapse>
@@ -54,7 +67,6 @@ class Header extends Component {
     )
   }
 }
-
 
 
 export default Header;

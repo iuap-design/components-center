@@ -9,6 +9,8 @@ var webpackConfig = require('./config/webpack.dev.config')
 var fallback = require('connect-history-api-fallback');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
+var path = require('path');
+var favicon = require('serve-favicon');
 
 
 
@@ -17,6 +19,8 @@ var compiler = webpack(webpackConfig);
 var app = express()
 
 app.use('/static', express.static(webpackConfig.commonPath.staticDir));
+
+app.use(favicon(__dirname + '/server/assets/favicon.ico'));
 
 app.use(bodyParser.json());
 

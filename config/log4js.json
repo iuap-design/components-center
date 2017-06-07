@@ -1,5 +1,5 @@
 {
-  "customBaseDir" :"C:/zby/workspace/components-center/server/logs/",
+  "customBaseDir" :"I:/workspace/components-center/server/logs/",
   "customDefaultAtt" :{
     "type": "dateFile",
     "absolute": true,

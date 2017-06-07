@@ -10,9 +10,9 @@ class Homepage extends Component {
 
     render() {
         return (
-            <div>
+            <Row>
               <Search />
-            </div>
+            </Row>
         );
     }
 
